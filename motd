@@ -1,0 +1,20 @@
+          _
+    /\   | |
+   /  \  | |__   ___  _   _
+  / /\ \ | '_ \ / _ \| | | |
+ / ____ \| | | | (_) | |_| |
+/_/    \_\_| |_|\___/ \__, |
+                       __/ |
+                      |___/
+
+In case of a massive server error use the following command to restart
+the main server services:
+> systemctl restart httpd mysqld
+If varnish is installed run:
+> systemctl restart varnish
+
+If this is your first login update the MySQL security:
+> sudo grep 'temporary password' /var/log/mysqld.log
+> mysql_secure_installation
+And initialise WordPress databases
+> bash /scripts/wpdb-install.bash

@@ -15,6 +15,8 @@ yum install mysql-server -y
 
 # Start webserver services
 systemctl start httpd mysqld
+systemctl enable httpd
+systemctl enable mysqld
 
 # Load in external content
 wget -O /etc/motd https://raw.githubusercontent.com/codecomp/rhel7-setup/master/motd

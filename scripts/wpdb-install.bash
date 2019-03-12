@@ -19,6 +19,6 @@ echo "Database:   $1"
 echo "Username:   $2"
 echo "Password:   $PASS"
 
-sed -i "s/database_name_here/$1/g" /var/www/html/wp-config.php
-sed -i "s/username_here/$2/g" /var/www/html/wp-config.php
-sed -i "s/password_here/$PASS/g" /var/www/html/wp-config.php
+sed -i "/DB_NAME/s/.*/define( 'DB_NAME', '"$1"' );/" /var/www/html/wp-config.php
+sed -i "/DB_USER/s/.*/define( 'DB_USER', '"$2"' );/" /var/www/html/wp-config.php
+sed -i "/DB_PASSWORD/s/.*/define( 'DB_PASSWORD', '"$PASS"' );/" /var/www/html/wp-config.php

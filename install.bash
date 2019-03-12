@@ -23,9 +23,6 @@ wget -O /etc/motd https://raw.githubusercontent.com/codecomp/rhel7-setup/master/
 mkdir /scripts
 wget -O /scripts/wpdb-install.bash https://raw.githubusercontent.com/codecomp/rhel7-setup/master/scripts/wpdb-install.bash
 
-# Allow ec2-user write access to the html directry if the user exists
-id -u ec2-user > /dev/null 2>&1 && chown -R ec2-user /var/www/html
-
 # Install WordPress
 cd /var/www/html
 wget http://wordpress.org/latest.tar.gz
@@ -34,3 +31,6 @@ mv wordpress/* .
 rmdir wordpress/
 rm -f latest.tar.gz readme.html license.txt
 mv wp-config-sample.php wp-config.php
+
+# Allow ec2-user write access to the html directry if the user exists
+id -u ec2-user > /dev/null 2>&1 && chown -R ec2-user:apache /var/www/html

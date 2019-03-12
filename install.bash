@@ -4,6 +4,7 @@
 yum update -y
 yum install wget -y
 yum install nano -y
+rpm -ivh http://download.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm
 yum install pwgen -y
 wget http://repo.mysql.com/mysql80-community-release-el7-2.noarch.rpm
 yum localinstall mysql80-community-release-el7-2.noarch.rpm -y

@@ -12,6 +12,7 @@ rm -f mysql80-community-release-el7-2.noarch.rpm
 yum install httpd
 yum install php php-mysql -y
 yum install mysql-server -y
+yum install mod_ssl -y
 
 # Start webserver services
 systemctl start httpd mysqld

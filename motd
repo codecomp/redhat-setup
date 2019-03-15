@@ -1,3 +1,14 @@
+If this is your first login:
+Update the MySQL security
+> grep 'temporary password' /var/log/mysqld.log
+> mysql_secure_installation
+And initialise WordPress databases
+> bash /scripts/wpdb-install.bash
+Set Apache to allow htaccess overrides in
+/var/www /html directory to `AllowOverrides All`
+> nano /etc/httpd/conf/httpd.conf
+> systemctl restart httpd
+
           _
     /\   | |
    /  \  | |__   ___  _   _
@@ -12,9 +23,3 @@ the main server services:
 > systemctl restart httpd mysqld
 If varnish is installed run:
 > systemctl restart varnish
-
-If this is your first login update the MySQL security:
-> sudo grep 'temporary password' /var/log/mysqld.log
-> mysql_secure_installation
-And initialise WordPress databases
-> bash /scripts/wpdb-install.bash
